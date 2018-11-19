@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Reservas</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}">
+	<link href="https://fonts.googleapis.com/css?family=Carter+One" rel="stylesheet"> 
+<style type="text/css">
+.boton_personalizado{
+	text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #4CAF50;
+    border-radius: 6px;
+    border: 2px solid #ffffff;
+ }
+ .boton_personalizado:hover{
+    color: #4CAF50;
+    background-color: #ffffff;
+}
+</style>
+</head>
+
+<body background="static/reservaD.jpg" style="background-repeat: no-repeat;">
+<div>
+	<nav>
+	 <div >
+      	<center>
+      		<table>
+  
+    			<form  action="/reservas" method='POST'>
+         			<input type="submit" value="Reservas" class="boton_personalizado" > 
+  		 		</form>
+
+    			<form action="/historial" method='POST' >
+        			<input type="submit" value="historial"class="boton_personalizado"> 
+  			    </form>
+
+    			<form action="/contacto" method='POST' >
+        			<input type="submit" value="Contactanos" class="boton_personalizado"> 
+  				</form>
+
+  				<form action="/inicio" method='POST' style="display: flex; flex-direction: row-reverse;">
+        			<input type="submit" value="Salir" class="boton_personalizado"> 
+  				</form>
+
+      		</table>
+        </center>
+
+	  </div>
+	</nav>
+
+</div>
+	<div>
+		<span class="
+		tamañoR"><center>Reservas</center></span>
+	</div>
+	<div class="caja_textoR">
+		<form action="/reserva" method='POST'>
+			<center>
+			<input type="text" placeholder="Origen"name="origen" list="ciudades"required> 
+			<datalist id="ciudades">
+					<option value="Albuquerque, New Mexico"></option>
+					<option value="Atlanta, Georgia"></option>
+					<option value="Nashville, Tennessee"></option>
+					<option value="Boston, Massachusetts"></option>
+					<option value="Washington D.C."></option>
+					<option value="Denver, Colorado"></option>
+					<option value="Dallas, Texas"></option>
+					<option value="Detroit, Michigan"></option>
+					<option value="Houston, Texas"></option>
+					<option value="New York"></option>
+					<option value="Los Angeles, California"></option>
+					<option value="Miami, Florida"></option>
+					<option value="Minneapolis, Minnesota"></option>
+					<option value="New Orleans, Louisiana"></option>
+					<option value="Chicago, Illinois"></option>
+					<option value="Philadelphia, Pennsilvania"></option>
+					<option value="Phoenix, Arizona"></option>
+					<option value="Providence/Newport, Rhode Island"></option>
+					<option value="Raleigh/Durham, North Carolina"></option>
+					<option value="Seattle/Tacoma, Washington"></option>
+					<option value="San Francisco, California"></option>
+					<option value="St Louis, Missouri"></option>
+					<option value="Tampa, Florida"></option>
+				</datalist>
+			<input type="text" placeholder="Destino"name="destino" list="ciudades" required>
+			<datalist id="aerolinea">
+					<option value="Delta Airlines"></option>
+					<option value="American Airlines"></option>
+					<option value="Copa Airlines"></option>
+					<option value="US Airways"></option>
+					<option value="Tradewind Aviation"></option>
+					<option value="Wright Air"></option>
+					<option value="Travel Air"></option>
+					<option value="Hawaiian Airlines "></option>
+					<option value="Norwegian"></option>
+					<option value="United Airlines "></option>
+					<option value="Pacific Airways"></option>
+					<option value="Qatar Airways "></option>
+					<option value="West Jet"></option>
+					<option value="KLM Airlines "></option>
+					<option value="Air France"></option>
+					<option value="40-Mile Air"></option>
+					<option value="Mokulele Airlines"></option>
+					<option value="Frontier Airlines"></option>
+					<option value="Alaska Seaplane "></option>
+				</datalist>
+            <input type="text" placeholder="Aerolinea" name="aerolinea" list="aerolinea"required>
+			<input type="submit" value="Buscar">
+			</center>
+		</form>
+	</div>
+	<div class="slider">
+		<ul>
+			<li><img src="static/1.jpg" alt=""></li>
+			<li><img src="static/2.jpg" alt=""></li>
+			<li><img src="static/3.jpg" alt=""></li>
+			<li><img src="static/4.jpg" alt=""></li>
+			<li><img src="static/5.jpg" alt=""></li>
+		</ul>
+	</div>
+</body>
+</html>

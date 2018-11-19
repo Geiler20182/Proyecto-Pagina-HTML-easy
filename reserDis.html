@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Reservas</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}">
+<style>
+#customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#customers tr{
+	background-color: #fff;
+}
+
+#customers tr:nth-child(even){
+	background-color: #f2f2f2;
+}
+
+#customers tr:hover {background-color: #ddd;
+}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+
+
+} 
+.boton_personalizado{
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #4CAF50;
+    border-radius: 6px;
+    border: 2px solid #ffffff;
+ }
+ .boton_personalizado:hover{
+    color: #4CAF50;
+    background-color: #ffffff;
+}
+
+</style>
+</head>
+<body background="static/fondo1.jpg" style="background-repeat: no-repeat;">
+	<!--<body background="static/reservaF.jpg" style="background-repeat: no-repeat;">-->
+
+	<div>
+	<nav>
+	 <div >
+      	<center>
+      		<table>
+  
+    			<form  action="/reservas" method='POST'>
+         			<input type="submit" value="Reservas" class="boton_personalizado" > 
+  		 		</form>
+
+    			<form action="/historial" method='POST' >
+        			<input type="submit" value="historial"class="boton_personalizado"> 
+  			    </form>
+
+    			<form action="/contacto" method='POST' >
+        			<input type="submit" value="Contactanos" class="boton_personalizado"> 
+  				</form>
+
+  				<form action="/inicio" method='POST' style="display: flex; flex-direction: row-reverse;">
+        			<input type="submit" value="Salir" class="boton_personalizado"> 
+  				</form>
+
+      		</table>
+        </center>
+
+	  </div>
+	</nav>
+
+	</div>
+
+	
+	<div >
+		{% block body %}
+		<form action="/solicitar_reserva" method="POST" style="display: flex;flex-direction: row;">
+			<table id="customers">
+			    <tr>
+			      <th>🛩 Aereolinea</th>
+			      <th>🆔 Vuelo</th>
+			      <th>🌇 Ciudad Origen</th>
+			      <th>🕠 Hora de salida</th>
+			      <th>🏙 Ciudad Destino</th>
+			      <th>⏰ Hora de llegada</th>
+			      <th>🔻 Numero de paradas</th>
+			      <th>🚀 Aereonave</th>
+			      <th>✅ Elegir</th>
+			    </tr>
+			
+			{% for vuelo in vuelos %}
+			    <tr>
+			      <td>{{ vuelo.aereolinea }}</td>
+			      <td>{{ vuelo.vuelo }}</td>
+			      <td>{{ vuelo.ciudad_origen }}</td>
+			      <td>{{ vuelo.hora_salida }} {{ vuelo.meridiano_salida }}</td>
+			      <td>{{ vuelo.ciudad_destino }}</td>
+			      <td>{{ vuelo.hora_llegada }} {{ vuelo.meridiano_llegada }}</td>
+			      <td>{{ vuelo.paradas }}</td>
+			      <td>{{ vuelo.areonave }}</td>
+			      <td><input type="submit" name="id_vuelo" value="{{ vuelo.vuelo }}"></td>
+			      <br>
+			    </tr>
+			{% endfor %}
+			
+			
+			  </table>
+		</form>
+		{% endblock body %}
+	</div>
+	
+
+
+
+</body>
+</html>

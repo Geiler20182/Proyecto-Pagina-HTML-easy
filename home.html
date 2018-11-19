@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>home</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}">
+  <link href="https://fonts.googleapis.com/css?family=Carter+One" rel="stylesheet"> 
+  <style type="text/css">
+  .boton_personalizado{
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #1883ba;
+    border-radius: 6px;
+    border: 2px solid #0016b0;
+  }
+  .boton_personalizado:hover{
+    color: #1883ba;
+    background-color: #ffffff;
+  }
+</style>
+</head>
+<body background="static/reservaF.jpg" style="background-repeat: no-repeat;">
+	<div>
+	<nav>
+		<div >
+      <center>
+      <table>
+  
+    	<form  action="/reservas" method='POST'>
+          
+        	<input type="submit" value="Reservas" class="boton_personalizado" > 
+  		 </form>
+
+    	<form action="/historial" method='POST' >
+        	<input type="submit" value="historial"class="boton_personalizado"> 
+  		 </form>
+
+    	<form action="/contacto" method='POST' >
+        	<input type="submit" value="Contactanos" class="boton_personalizado"> 
+  		 </form>
+
+      </table>
+      </center>
+
+		</div>
+	</nav>
+
+	</div>
+    <center>
+      <div class="tamaño">ORION</div>
+        <div class="logo">"Tu sueño hecho realidad"</div>
+    </center>
+</body>
+</html>

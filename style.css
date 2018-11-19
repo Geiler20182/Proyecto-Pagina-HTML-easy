@@ -1,0 +1,121 @@
+@import "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: url('fondo.jpg') no-repeat;
+    background-size: cover; 
+}
+.caja_login h1{
+    float:left;
+    font-size: 20px;
+    border-bottom: 6px solid #04B4AE;
+    margin-bottom: 10px;
+    padding: 1px 0;
+
+}
+.caja_login h2{
+    float:left;
+    font-size: 20px;
+    border-bottom: 6px solid #04B4AE;
+    margin-bottom: 10px;
+    padding: 1px 0;
+
+}
+.caja_login {
+    width: 280px;
+    position: relative;
+    top: 40%;
+    left: 40%;
+    transform: tranlate(-50%, -50%);
+    color: #ffffff;
+}
+.caja_texto{
+    width: 100%;
+    overflow: hidden;
+    font-size: 20px;
+    padding: 8px 0;
+    margin: 8px 0;
+    border-bottom: 1px solid #0080FF;
+    color: #ffffff;
+}
+.caja_texto i{
+    width: 26px;
+    float:left;
+    text-align:center;
+}
+.caja_texto input{
+    border: none;
+    outline: none;
+    background: none; 
+    color: #ffffff
+
+}
+.tamaño{
+    font-size: 100px;
+  
+    color: #19D188;
+    font-family: 'Carter One', cursive;
+}
+.table{
+    background-color: #632432;
+    font-family: Arial;
+}
+.botonReser{
+    text-decoration:none;
+    font-weight:600;
+    font-size:20px;
+    color:#ffffff;
+    padding-top:15px;
+    padding-bottom:15px;
+    padding-left:150px;
+    padding-right:150px;
+}
+.tamañoR{
+    font-size: 100px;
+    color: #19D188;
+    font-family: 'Carter One', cursive;
+}
+.slider{
+    width: 95%;
+    margin: auto;
+    overflow: hidden;
+}
+.slider ul {
+    display: flex;
+    padding: 0;
+    width: 300%;
+    
+    animation: cambio 10s infinite;
+    animation-direction: alternate;
+
+}
+.slider li{
+    width: 100%;
+    list-style: none;
+}
+.slider img{
+    width: 100%;
+
+}
+@keyframes cambio{
+    0% { margin-left: 0; }
+    20% {margin-left: 0;}
+    25%{margin-left: -100%;}
+    45%{margin-left: -100%;}
+}
+.inf{
+
+
+    font-family: 'Carter One', cursive;
+    font-family: 'Oleo Script', cursive;
+    color: #ffff;
+
+
+}
+.logo{
+    color: #ffff;
+    font-family: 'Carter One', cursive;
+    font-size: 60px;
+
+}
